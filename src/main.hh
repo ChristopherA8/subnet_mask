@@ -33,6 +33,18 @@ int subnetMaskShorthand(uint32_t mask);
 string networkAddressStr(uint32_t ip, uint32_t mask);
 
 /**
+ * Returns the broadcast address for a given network ip and subnet
+ * @return broadcast network address like (192.168.0.255)
+ */
+string broadcastAddressStr(uint32_t ip, uint32_t mask);
+
+/**
+ * Returns IPv4 address string from uint32_t ip
+ * @return IPv4 string
+ */
+string addressStr(uint32_t adr);
+
+/**
  * Print errors and exit program
  * @param code int
  */

@@ -16,6 +16,8 @@ int main() {
    printBinaryOctets(subnetMask);
    cout << "== Network Address ================\n";
    cout << networkAddressStr(userIp, subnetMask);
+   cout << "\n== Broadcast Address ==============\n";
+   cout << broadcastAddressStr(userIp, subnetMask);
    cout << "\n===================================\n";
 
    return 0;
@@ -98,11 +100,19 @@ int subnetMaskShorthand(uint32_t mask) {
 
 string networkAddressStr(uint32_t ip, uint32_t mask) {
    uint32_t networkIp = ip & mask;
+   return addressStr(networkIp);
+}
 
-   return to_string((networkIp >> 24) & 0xFF) + "." +
-          to_string((networkIp >> 16) & 0xFF) + "." +
-          to_string((networkIp >> 8)  & 0xFF) + "." +
-          to_string( networkIp        & 0xFF);
+string broadcastAddressStr(uint32_t ip, uint32_t mask) {
+   uint32_t adr = ip | (mask ^ 0xFFFFFFFF);
+   return addressStr(adr);
+}
+
+string addressStr(uint32_t adr) {
+   return to_string((adr >> 24) & 0xFF) + "." +
+         to_string((adr >> 16) & 0xFF) + "." +
+         to_string((adr >> 8)  & 0xFF) + "." +
+         to_string( adr        & 0xFF);
 }
 
 void endProgram(int code) {
