@@ -1,3 +1,3 @@
 # Subnet Mask
 
-<img width="361" height="266" alt="Screenshot 2025-12-08 at 6 18 38 PM" src="https://github.com/user-attachments/assets/1ef8f28a-31d4-4b0a-963f-0213b353eaff" />
+<img width="479" height="250" alt="Screenshot 2025-12-11 at 9 58 59 AM" src="https://github.com/user-attachments/assets/405c1121-2fbb-4e6f-97de-b70a15be3deb" />
